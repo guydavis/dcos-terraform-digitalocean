@@ -1,4 +1,4 @@
-# digitalocean-terraform
+# dcos-terraform-digitalocean
 Terraform scripts for digitalocean.com, based on [packet-terraform](https://github.com/mesosphere/packet-terraform)
 
 ### This repo holds [Terraform](https://www.terraform.io/) scripts to create a
@@ -7,7 +7,10 @@ provider.
 
 ##### To use:
 
-Clone or download repo.
+Clone or download repo: https://github.com/guydavis/dcos-terraform-digitalocean
+
+Generate a DO Personal Access Token for Terraform and export in your shell as DO_PAT. 
+https://cloud.digitalocean.com/settings/api/tokens
 
 Generate a `do-key` keypair (with an empty passphrase):
 
@@ -15,15 +18,13 @@ Generate a `do-key` keypair (with an empty passphrase):
 ssh-keygen -t rsa -P '' -f ./do-key
 ```
 
-Copy `sample.terraform.tfvars` to `terraform.tfvars` and insert your variables.
+Copy `sample.terraform.tfvars` to `terraform.tfvars` and insert your variables including SSH key fingerprint and DO access token.
 
-Initially, a Digital Ocean account only allows 5 Droplets, which is not sufficient
-for this experiment. It is possible to increase this limit to 10 on the
+By default, this will start four droplets (bootstrap, master, agent, and public agent).  Increase *_count settings in terraform.tvars to try with more droplets. NOTE: You may need to increase your droplet limit to 10 on the
 [Digital Ocean profile page](https://cloud.digitalocean.com/settings/profile#).
 
+Check `terraform plan`
 Run `terraform apply`
-
-In `terraform.tfvars` provide the fingerprint for your public SSH key loaded into DigitalOcean.
 
 ##### Theory of Operation:
 

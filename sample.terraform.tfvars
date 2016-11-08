@@ -10,11 +10,11 @@ boot_size = "4GB"
 
 dcos_cluster_name = "digitalocean-dcos"
 
-dcos_master_count = "3"
+dcos_master_count = "1"
 
-dcos_agent_count = "4"
+dcos_agent_count = "1"
 
-dcos_public_agent_count = "3"
+dcos_public_agent_count = "1"
 
 # dcos_installer_url = "https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh"
 
