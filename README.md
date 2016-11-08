@@ -1,5 +1,5 @@
 # dcos-terraform-digitalocean
-Terraform scripts for digitalocean.com, based on [packet-terraform](https://github.com/mesosphere/packet-terraform)
+Terraform scripts for digitalocean.com, based on [packet-terraform](https://github.com/mesosphere/packet-terraform) to launch a [DC/OS](https://dcos.io/) cluster.
 
 ### This repo holds [Terraform](https://www.terraform.io/) scripts to create a
 1, 3, or 5 master DCOS cluster on the [digitalocean.com](https://digitalocean.com/)
@@ -23,8 +23,9 @@ Copy `sample.terraform.tfvars` to `terraform.tfvars` and insert your variables i
 By default, this will start four droplets (bootstrap, master, agent, and public agent).  Increase *_count settings in terraform.tvars to try with more droplets. NOTE: You may need to increase your droplet limit to 10 on the
 [Digital Ocean profile page](https://cloud.digitalocean.com/settings/profile#).
 
-Check `terraform plan`
-Run `terraform apply`
+First check with `terraform plan`
+
+Then run with `terraform apply`
 
 ##### Theory of Operation:
 
