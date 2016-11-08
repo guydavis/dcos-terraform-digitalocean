@@ -1,7 +1,7 @@
 output "agent-ips" {
   value = "${join(",", digitalocean_droplet.dcos_agent.*.ipv4_address)}"
 }
-output "agent-public-ips {
+output "agent-public-ips" {
   value = "${join(",", digitalocean_droplet.dcos_public_agent.*.ipv4_address)}"
 }
 output "master-ips" {
